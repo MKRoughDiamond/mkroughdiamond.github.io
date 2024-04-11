@@ -4,9 +4,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
-    width: 50%;
+    width: 50vw;
+    min-width: 600px;
     margin: 0 auto;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
@@ -14,6 +16,7 @@ body{
     font-style: normal;
     font-variation-settings: "wdth" 100;
     font-size: 16px;
+	color: #282b2c;
 }
 .header-bar {
     background-color: #282b2c;
@@ -47,7 +50,6 @@ body{
 	float: right;
 }
 .content {
-    color: #282b2c;
     margin: 0 auto;
     padding: 0 3% 2% 3%;
     scroll-behavior: smooth;
@@ -56,11 +58,12 @@ body{
 	display: inline-block;
 	margin-left: 5%;
 	width: 35%;
+	min-width: 240px;
 }
 .introholder {
 	display: inline-block;
-	min-width: 300px;
-	width: 50%;
+	min-width: 250px;
+	width: 45%;
 	margin-left: 5%;
 	vertical-align: bottom;
 }
@@ -81,17 +84,19 @@ body{
 }
 .pubimageholder{
 	display: inline-block;
-	width: 15%;
+	width: 20%;
+	min-width: 120px;
 	height: 10vh;
+	vertical-align:top;
 }
 .pubtextholder{
 	display: inline-block;
-	width: 83%;
+	width: 75%;
 	height: 100%;
-	float: right;
+	margin-left:2%;
 }
 #spacing{
-	margin-top: 1%;
+	margin-top: 2vh;
 }
 a {
     margin: 0 auto;
@@ -121,7 +126,7 @@ p {
 	line-height: 1.5em;
 }
 p#pub{
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 1.5em;
 	margin: 0;
 }
@@ -169,8 +174,8 @@ li {
 					</h4>
 					<h3>Contact</h3>
 					<h4>
-						wchoi@bi.snu.ac.kr<br/>
-						dnjstjr4349@gmail.com<br/>
+						wchoi (at) bi.snu.ac.kr<br/>
+						dnjstjr4349 (at) gmail.com<br/>
 					</h4>
 					</div>
 			</div>
@@ -185,7 +190,7 @@ li {
 		</p>
 		<ul>
 			<li>Representation learning in realistic environments (with class-imbalances, distribution shifts, ...)</li>
-			<li>Online learning & Active learning, Curiosity</li>
+			<li>Online learning & Active learning, <i>Curiosity</i></li>
 			<li>Few-shot generalization</li>
 			<li>Score-based models and Optimal transport</li>
 		</ul>
@@ -211,14 +216,16 @@ li {
         <h2>Publications</h2>
 		<div class="pubitemholder">
 			<div class="pubimageholder">
-				<a href="fig/duel-aaai.png" target="_blank">
-					<img src="fig/duel-aaai.png" style="height:100%;width:100%">
+				<a href="fig/duel-aaai.PNG" target="_blank">
+					<img src="fig/duel-aaai.PNG" style="height:100%;width:100%">
 				</a>
 			</div>
 			<div class="pubtextholder">
 				<p id="pub">
-					<b>DUEL: Duplicate Elimination on Active Memory for Self-Supervised Class-Imbalanced Learning</b> </br>
-					<b>Won-Seok Choi</b>, Hyundo Lee, Dong-Sig Han, Junseok Park, Heeyeon Koo, Byoung-Tak Zhang </br>
+					<b>DUEL: Duplicate Elimination on Active Memory for Self-Supervised Class-Imbalanced Learning</b>
+				</p>
+				<p id="pub" style="color:#606060">
+					<i><b>Won-Seok Choi</b>, Hyundo Lee, Dong-Sig Han, Junseok Park, Heeyeon Koo, Byoung-Tak Zhang</i></br>
 					The 38th Annual AAAI Conference on Artificial Intelligence (AAAI 2024) </br>
 					[<a href="https://arxiv.org/abs/2402.08963">paper</a>]
 				</p>
@@ -226,14 +233,16 @@ li {
 		</div>
 		<div class="pubitemholder" id="spacing">
 			<div class="pubimageholder">
-				<a href="fig/toddler-aaai.png" target="_blank">
-					<img src="fig/toddler-aaai.png" style="height:100%;width:100%">
+				<a href="fig/toddler-aaai.PNG" target="_blank">
+					<img src="fig/toddler-aaai.PNG" style="height:100%;width:100%">
 				</a>
 			</div>
 			<div class="pubtextholder">
 				<p id="pub">
 					<b>Unveiling the Significance of Toddler-Inspired Reward Transition in Goal-Oriented Reinforcement Learning</b> </br>
-					Junseok Park, Yoonsung Kim, Hee bin Yoo, Min Whoo Lee, Kibeom Kim, <b>Won-Seok Choi</b>, Minsu Lee, Byoung-Tak Zhang </br>
+				</p>
+				<p id="pub" style="color:#606060">
+					<i>Junseok Park, Yoonsung Kim, Hee bin Yoo, Min Whoo Lee, Kibeom Kim, <b>Won-Seok Choi</b>, Minsu Lee, Byoung-Tak Zhang</i></br>
 					The 38th Annual AAAI Conference on Artificial Intelligence (AAAI 2024) </br>
 					[<a href="https://ojs.aaai.org/index.php/AAAI/article/view/27815">paper</a>]
 				</p>
@@ -241,14 +250,16 @@ li {
 		</div>
 		<div class="pubitemholder" id="spacing">
 			<div class="pubimageholder">
-				<a href="fig/sketching-cvpr.png" target="_blank">
-					<img src="fig/sketching-cvpr.png" style="height:100%;width:100%">
+				<a href="fig/sketching-cvpr.PNG" target="_blank">
+					<img src="fig/sketching-cvpr.PNG" style="height:100%;width:100%">
 				</a>
 			</div>
 			<div class="pubtextholder">
 				<p id="pub">
 					<b>Learning Geometry-aware Representations by Sketching</b> </br>
-					Hyundo Lee, Inwoo Hwang, Hyunsung Go, <b>Won-Seok Choi</b>, Kibeom Kim, Byoung-Tak Zhang </br>
+				</p>
+				<p id="pub" style="color:#606060">
+					<i>Hyundo Lee, Inwoo Hwang, Hyunsung Go, <b>Won-Seok Choi</b>, Kibeom Kim, Byoung-Tak Zhang</i></br>
 					The IEEE/CVF Conference on Computer Vision and Pattern Recognition 2023 (CVPR 2023) </br>
 					[<a href="https://openaccess.thecvf.com/content/CVPR2023/html/Lee_Learning_Geometry-Aware_Representations_by_Sketching_CVPR_2023_paper.html">paper</a>]
 				</p>
@@ -256,14 +267,16 @@ li {
 		</div>
 		<div class="pubitemholder" id="spacing">
 			<div class="pubimageholder">
-				<a href="fig/duel-workshop.png" target="_blank">
-					<img src="fig/duel-workshop.png" style="height:100%;width:100%">
+				<a href="fig/duel-workshop.PNG" target="_blank">
+					<img src="fig/duel-workshop.PNG" style="height:100%;width:100%">
 				</a>
 			</div>
 			<div class="pubtextholder">
 				<p id="pub">
 					<b>DUEL: Adaptive Duplicate Elimination on Working Memory for Self-Supervised Learning</b> </br>
-					<b>Won-Seok Choi</b>, Hyundo Lee, Dong-Sig Han, Junseok Park, Heeyeon Koo, Byoung-Tak Zhang </br>
+				</p>
+				<p id="pub" style="color:#606060">
+					<i><b>Won-Seok Choi</b>, Hyundo Lee, Dong-Sig Han, Junseok Park, Heeyeon Koo, Byoung-Tak Zhang</i></br>
 					NeurIPS 2022 SSLTheoryPractice Workshop </br>
 					[<a href="https://arxiv.org/abs/2210.17052">paper</a>] [<a href="https://sslneurips22.github.io/">workshop</a>]
 				</p>
@@ -271,14 +284,16 @@ li {
 		</div>
 		<div class="pubitemholder" id="spacing">
 			<div class="pubimageholder">
-				<a href="fig/mpart-icml.png" target="_blank">
-					<img src="fig/mpart-icml.png" style="height:100%;width:100%">
+				<a href="fig/mpart-icml.PNG" target="_blank">
+					<img src="fig/mpart-icml.PNG" style="height:100%;width:100%">
 				</a>
 			</div>
 			<div class="pubtextholder">
 				<p id="pub">
 					<b>Message passing adaptive resonance theory for online active semi-supervised learning</b> </br>
-					Taehyeong Kim, Injune Hwang, Hyundo Lee, Hyunseo Kim, <b>Won-Seok Choi</b>, Joseph J Lim, Byoung-Tak Zhang </br>
+				</p>
+				<p id="pub" style="color:#606060">
+					<i>Taehyeong Kim, Injune Hwang, Hyundo Lee, Hyunseo Kim, <b>Won-Seok Choi</b>, Joseph J Lim, Byoung-Tak Zhang</i></br>
 					International Conference on Machine Learning 2021 (ICML 2021) </br>
 					[<a href="https://proceedings.mlr.press/v139/kim21e">paper</a>]
 				</p>
@@ -286,14 +301,16 @@ li {
 		</div>
 		<div class="pubitemholder" id="spacing">
 			<div class="pubimageholder">
-				<a href="fig/arlet-workshop.png" target="_blank">
-					<img src="fig/arlet-workshop.png" style="height:100%;width:100%">
+				<a href="fig/arlet-workshop.PNG" target="_blank">
+					<img src="fig/arlet-workshop.PNG" style="height:100%;width:100%">
 				</a>
 			</div>
 			<div class="pubtextholder">
 				<p id="pub">
 					<b>ARLET: Adaptive Representation Learning with End-to-end Training</b> </br>
-					<b>Won-Seok Choi</b>, Injune Hwang, Byoung-Tak Zhang </br>
+				</p>
+				<p id="pub" style="color:#606060">
+					<i><b>Won-Seok Choi</b>, Injune Hwang, Byoung-Tak Zhang</i></br>
 					NeurIPS 2020 Workshop on BabyMind </br>
 					[<a href="https://bi.snu.ac.kr/NeurIPS2020_Babymind/26.pdf">paper</a>] [<a href="https://babymind-workshop-2020.github.io/">workshop</a>]
 				</p>
@@ -301,15 +318,17 @@ li {
 		</div>
 		<div class="pubitemholder" id="spacing">
 			<div class="pubimageholder">
-				<a href="fig/lpart-icassp.png" target="_blank">
-					<img src="fig/lpart-icassp.png" style="height:100%;width:100%">
+				<a href="fig/lpart-icassp.PNG" target="_blank">
+					<img src="fig/lpart-icassp.PNG" style="height:100%;width:100%">
 				</a>
 			</div>
 			<div class="pubtextholder">
 				<p id="pub">
 					<b>Label propagation adaptive resonance theory for semi-supervised continuous learning</b> </br>
-					Taehyeong Kim, Injune Hwang, Gi-Cheon Kang, <b>Won-Seok Choi</b>, Hyunseo Kim, Byoung-Tak Zhang </br>
-					2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2020) </br>
+				</p>
+				<p id="pub" style="color:#606060">
+					<i>Taehyeong Kim, Injune Hwang, Gi-Cheon Kang, <b>Won-Seok Choi</b>, Hyunseo Kim, Byoung-Tak Zhang</i></br>
+					45th International Conference on Acoustics, Speech, and Signal Processing (ICASSP 2020) </br>
 					[<a href="https://ieeexplore.ieee.org/abstract/document/9054655">paper</a>]
 				</p>
 			</div>
@@ -318,7 +337,7 @@ li {
     <hr>
     <footer class="footer-bar">
 	Won-Seok Choi, <a href="https://bi.snu.ac.kr">BioIntelligence Lab, Seoul National University</a>.<br/>
-	Last update: 11, April, 2024
+	Last update: 12, April, 2024
     </footer>
 </body>
 </html>
