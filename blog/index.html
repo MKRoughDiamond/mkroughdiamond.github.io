@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
     <div id="header-mount"></div>
     <div class="content">
         <h2>Blog</h2>
@@ -34,6 +35,11 @@
                 if (footer) document.getElementById('footer-mount').replaceWith(footer);
                 applyMobileNav();
             });
+
+        var scrollBtn = document.getElementById('scroll-top');
+        window.addEventListener('scroll', function() {
+            scrollBtn.classList.toggle('visible', window.scrollY > 200);
+        });
 
         function applyMobileNav() {
             var isMobile = window.innerWidth <= 768;
