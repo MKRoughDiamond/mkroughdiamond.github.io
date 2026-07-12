@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <title>Won-Seok Choi</title>
 </head>
 
@@ -14,11 +14,13 @@
     <header class="header-bar">
         <nav>
             <div class="nav-left">
-                <a class="header-a" href="#bio"><div class="hbutton">Bio</div></a>
-                <a class="header-a" href="#pub"><div class="hbutton">Publications</div></a>
+                <a class="header-a" href="/"><div class="hbutton">Home</div></a>
+                <a class="header-a nav-hide-mobile" href="/#bio"><div class="hbutton">Bio</div></a>
+                <a class="header-a nav-hide-mobile" href="/#pub"><div class="hbutton">Publications</div></a>
+                <a class="header-a" href="/blog/"><div class="hbutton">Blog</div></a>
             </div>
             <div class="nav-right">
-                <a class="header-a" href="assets/CV.pdf" target="_blank"><div class="hbutton small">CV</div></a>
+                <a class="header-a" href="/assets/CV.pdf" target="_blank"><div class="hbutton small">CV</div></a>
                 <a class="header-a" href="https://github.com/mkroughdiamond" target="_blank"><div class="hbutton small">Github</div></a>
                 <a class="header-a" href="https://scholar.google.com/citations?user=A178IhQAAAAJ&hl=en" target="_blank"><div class="hbutton small">Scholar</div></a>
             </div>
@@ -69,10 +71,8 @@
 		</p>
         <h2>Academic Experiences</h2>
 		<p>
-		<span class="new-badge">Upcoming</span> [AAAI 2027] Reviewer, AAAI-27<br/>
-		[NeurIPS 2026] Reviewer, NeurIPS 2026<br/>
-		[AAAI 2026] Program committee (Reviewer), <a href="https://aaai.org/conference/aaai/aaai-26/">AAAI-26</a><br/>
-		[NeurIPS 2024] Reviewer, NeuIPS <a href="https://sslneurips2024.github.io/index.html">SSLTheoryPractice workshop</a><br/>
+		Reviewer — AAAI (2026, <span class="new-badge">Upcoming</span> 2027), NeurIPS (2026)<br/>
+		Workshop Reviewer — NeurIPS SSLTheoryPractice (2024)<br/>
 		[2021-S ~ 2025-F] <i>인공지능 만들기</i>, <a href="https://www.kmooc.kr/">K-MOOC online lecture</a>, Teaching Assistant<br/>
 		[2020 ~ 2022] Samsung NPEX Course, Teaching Assistant<br/>
 		[2020-F, 2022-F] <i>Artificial Neural Networks</i>, dept.CSE, SNU, Teaching Assistant<br/>
@@ -83,8 +83,26 @@
     <div class="content" id="pub">
         <h2>Publications</h2>
         <p style="color:#555555;font-size:14px">
-        I have a paper <b>accepted</b> to the <i>Neurocomputing</i> journal (to appear).
+        I have a paper <b>accepted</b> to the <i>Neurocomputing</i> journal (to appear, 1st author).<br/>
+        I have a paper <b>accepted</b> to the <i>KDD 2026 Workshop on Evaluation and Trustworthiness of Agentic AI</i> (to appear, co-1st author).
         </p>
+		<div class="pubitemholder">
+			<div class="pubimageholder">
+				<a href="fig/s2d_IEEE_TCDS.png" target="_blank">
+					<img src="fig/s2d_IEEE_TCDS.png" alt="From Sparse to Dense paper thumbnail" loading="lazy">
+				</a>
+			</div>
+			<div class="pubtextholder">
+				<p class="pub">
+					<b>From Sparse to Dense: Toddler-Inspired Reward Transition in Goal-Oriented Reinforcement Learning</b>
+				</p>
+				<p class="pub" style="color:#606060">
+					<i>Junseok Park, Hyeonseo Yang, Min Whoo Lee, <b>Won-Seok Choi</b>, Minsu Lee, Byoung-Tak Zhang</i><br/>
+					IEEE Transactions on Cognitive and Developmental Systems, Vol. 18, No. 3, June 2026 </br>
+					[<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11297801">paper</a>]
+				</p>
+			</div>
+		</div>
 		<div class="pubitemholder">
 			<div class="pubimageholder">
 				<a href="fig/duel-aaai.PNG" target="_blank">
@@ -254,6 +272,15 @@
                 img.style.transform = 'translateY(-50%)';
             });
         });
+
+        function applyMobileNav() {
+            var isMobile = window.innerWidth <= 768;
+            document.querySelectorAll('.nav-hide-mobile').forEach(function(el) {
+                el.style.display = isMobile ? 'none' : '';
+            });
+        }
+        applyMobileNav();
+        window.addEventListener('resize', applyMobileNav);
     </script>
 </body>
 </html>

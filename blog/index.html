@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>Blog — Won-Seok Choi</title>
+</head>
+
+<body>
+    <div id="header-mount"></div>
+    <div class="content">
+        <h2>Blog</h2>
+        <div id="blog-list"></div>
+    </div>
+    <hr>
+    <div id="footer-mount"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script>
+        // Inject header and footer from root index.html
+        fetch('/')
+            .then(function(r) { return r.text(); })
+            .then(function(html) {
+                var doc = new DOMParser().parseFromString(html, 'text/html');
+                var header = doc.querySelector('header.header-bar');
+                var footer = doc.querySelector('footer.footer-bar');
+                if (header) document.getElementById('header-mount').replaceWith(header);
+                if (footer) document.getElementById('footer-mount').replaceWith(footer);
+                applyMobileNav();
+            });
+
+        function applyMobileNav() {
+            var isMobile = window.innerWidth <= 768;
+            document.querySelectorAll('.nav-hide-mobile').forEach(function(el) {
+                el.style.display = isMobile ? 'none' : '';
+            });
+        }
+        window.addEventListener('resize', applyMobileNav);
+
+        function renderMd(mdText) {
+            var blocks = [];
+            var s = mdText.replace(/\$\$([\s\S]*?)\$\$/g, function(_, math) {
+                blocks.push({display: true, math: math});
+                return '\x00MATH' + (blocks.length - 1) + '\x00';
+            });
+            s = s.replace(/\$([^\$\n]+?)\$/g, function(_, math) {
+                blocks.push({display: false, math: math});
+                return '\x00MATH' + (blocks.length - 1) + '\x00';
+            });
+            var html = marked.parse(s);
+            html = html.replace(/\x00MATH(\d+)\x00/g, function(_, i) {
+                var b = blocks[i];
+                return katex.renderToString(b.math, {displayMode: b.display, throwOnError: false});
+            });
+            return html;
+        }
+
+        function extractTitle(mdText) {
+            var m = mdText.match(/^#\s+(.+)$/m);
+            return m ? m[1].trim() : 'Untitled';
+        }
+
+        fetch('manifest.json')
+            .then(function(r) { return r.json(); })
+            .then(function(posts) {
+                var list = document.getElementById('blog-list');
+                posts.forEach(function(post) {
+                    fetch(post.file)
+                        .then(function(r) { return r.text(); })
+                        .then(function(mdText) {
+                            var title = extractTitle(mdText);
+                            var html = renderMd(mdText);
+
+                            var tmp = document.createElement('div');
+                            tmp.innerHTML = html;
+                            var firstH1 = tmp.querySelector('h1');
+                            if (firstH1) firstH1.remove();
+
+                            var item = document.createElement('div');
+                            item.className = 'blogitemholder';
+
+                            var header = document.createElement('div');
+                            header.className = 'blog-title';
+                            header.innerHTML = '<span class="blog-date">' + post.date + '</span>' + title;
+
+                            var content = document.createElement('div');
+                            content.className = 'blog-content';
+                            content.innerHTML = tmp.innerHTML;
+
+                            header.addEventListener('click', function() {
+                                var isOpen = content.classList.contains('active');
+                                document.querySelectorAll('.blog-content.active').forEach(function(el) {
+                                    el.classList.remove('active');
+                                    el.previousElementSibling.classList.remove('open');
+                                });
+                                if (!isOpen) {
+                                    content.classList.add('active');
+                                    header.classList.add('open');
+                                }
+                            });
+
+                            item.appendChild(header);
+                            item.appendChild(content);
+                            list.appendChild(item);
+                        });
+                });
+            });
+    </script>
+</body>
+</html>
