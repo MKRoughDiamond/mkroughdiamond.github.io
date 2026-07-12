@@ -1,183 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{
-    width: 50vw;
-    min-width: 600px;
-    margin: 0 auto;
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-    font-size: 16px;
-	color: #282b2c;
-}
-.header-bar {
-    background-color: #282b2c;
-    color: white;
-    margin: 0 auto;
-}
-.footer-bar {
-    color: #282b2c;
-    margin: 0 auto;
-	min-height: 5%;
-	margin-bottom: 5%;
-}
-.hbutton {
-    display: inline-block;
-    min-width: 15%;
-    text-align: center;
-    font-weight: 400;
-    margin-left: -0.2%;
-    padding: 0.2% 0.5% 0.2% 0.5%;
-    transition: 0.3s;
-	min-height: 3vh;
-	line-height: 3vh;
-}
-.hbutton:hover {
-    background-color: white;
-    color: #282b2c;
-    font-weight: 700;
-}
-.hbutton#small{
-	min-width: 5%;
-	float: right;
-}
-.content {
-    margin: 0 auto;
-    padding: 0 3% 2% 3%;
-    scroll-behavior: smooth;
-}
-.photoholder {
-	display: inline-block;
-	margin-left: 5%;
-	width: 35%;
-	min-width: 240px;
-}
-.introholder {
-	display: inline-block;
-	min-width: 250px;
-	width: 45%;
-	margin-left: 5%;
-	vertical-align: bottom;
-}
-.introitemholder{
-	display: inline-block;
-	min-height: 20%;
-	width: 100%;
-}
-.pubitemholder{
-	display: inline-block;
-	width: 100%;
-	min-height: 10vh;
-	transition: 0.05s;
-	padding: 0.5%;
-}
-.pubitemholder:hover{
-	background-color: #F3F3F3;
-}
-.pubimageholder{
-	display: inline-block;
-	width: 20%;
-	min-width: 120px;
-	height: 10vh;
-	vertical-align:top;
-}
-.pubtextholder{
-	display: inline-block;
-	width: 75%;
-	height: 100%;
-	margin-left:2%;
-}
-#spacing{
-	margin-top: 2vh;
-}
-a {
-    margin: 0 auto;
-}
-.header-a{
-    text-decoration: none;
-    color: white;
-}
-h1 {
-	font-size: 28px;
-	font-weight: 600;
-}
-h2 {
-	font-weight: 600;
-}
-h3 {
-	margin-bottom: -1em;
-}
-h4 {
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 1.5em;
-}
-p {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 1.5em;
-}
-p#pub{
-	font-size: 14px;
-	line-height: 1.5em;
-	margin: 0;
-}
-ul {
-margin-bottom: 0;
-}
-li {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 1.5em;
-	margin-bottom: 0.5em;
-}
-</style>
+<title>Won-Seok Choi</title>
 </head>
 
 <body>
     <header class="header-bar">
-        <a class="header-a" href="#bio"><div class="hbutton">
-            Bio
-        </div></a>
-        <a class="header-a" href="#pub"><div class="hbutton">
-            Publications
-        </div></a>
-        <a class="header-a" href="assets/CV.pdf" target="_blank"><div class="hbutton" id="small">
-            CV
-        </div></a>
-        <a class="header-a" href="https://github.com/mkroughdiamond" target="_blank"><div class="hbutton" id="small">
-            Github
-        </div></a>
-        <a class="header-a" href="https://scholar.google.com/citations?user=A178IhQAAAAJ&hl=en" target="_blank"><div class="hbutton" id="small">
-            Scholar
-        </div></a>
+        <nav>
+            <div class="nav-left">
+                <a class="header-a" href="#bio"><div class="hbutton">Bio</div></a>
+                <a class="header-a" href="#pub"><div class="hbutton">Publications</div></a>
+            </div>
+            <div class="nav-right">
+                <a class="header-a" href="assets/CV.pdf" target="_blank"><div class="hbutton small">CV</div></a>
+                <a class="header-a" href="https://github.com/mkroughdiamond" target="_blank"><div class="hbutton small">Github</div></a>
+                <a class="header-a" href="https://scholar.google.com/citations?user=A178IhQAAAAJ&hl=en" target="_blank"><div class="hbutton small">Scholar</div></a>
+            </div>
+        </nav>
     </header>
     <div class="content" id="intro">
         <h1>Won-Seok Choi</h1>
-		<div style="margin:0 auto;width:100%">
+		<div class="intro-layout">
 			<div class="photoholder">
-				<img src="fig/photo.jpg" style="width:100%">
+				<img src="fig/photo.jpg" alt="Won-Seok Choi">
 			</div>
 			<div class="introholder">
-				<div class="introitemholder">
-					<h4>Ph.D Candidate<br/>
-						Dept. Computer Science and Engineering<br/>
-						Seoul National University<br/>
-					</h4>
-					<h3>Contact</h3>
-					<h4>
-						wchoi (at) bi.snu.ac.kr<br/>
-						dnjstjr4349 (at) gmail.com<br/>
-					</h4>
-					</div>
+				<h4>Ph.D Candidate<br/>
+					Dept. Computer Science and Engineering<br/>
+					Seoul National University<br/>
+				</h4>
+				<h3>Contact</h3>
+				<h4>
+					wchoi (at) bi.snu.ac.kr<br/>
+					dnjstjr4349 (at) gmail.com<br/>
+				</h4>
 			</div>
 		</div>
     </div>
@@ -199,13 +61,16 @@ li {
     <div class="content" id="bio">
         <h2>Biography</h2>
 		<p>
-        [<b>New!</b> 02.2026] Expected graduation (<b>ABD</b>)<br/>
+        <span class="new-badge">New</span> [08.2026] Ph.D. expected<br/>
+		<span class="new-badge">New</span> [03.2026 ~ 09.2026] Research Scientist Internship, LG AI Research<br/>
 		[09.2019 ~ <b>Current</b>] Ph.D. Candidate at Seoul National University (Prof. <a href="https://bi.snu.ac.kr/~btzhang">Byoung-Tak Zhang</a>)<br/>
-		[03.2015 ~ 08.2019] Bachelor’s degree in CSE at Seoul National University<br/>
+		[03.2015 ~ 08.2019] Bachelor's degree in CSE at Seoul National University<br/>
 		[03.2013 ~ 02.2015] Graduated Chungnam Science High School
 		</p>
         <h2>Academic Experiences</h2>
 		<p>
+		<span class="new-badge">Upcoming</span> [AAAI 2027] Reviewer, AAAI-27<br/>
+		[NeurIPS 2026] Reviewer, NeurIPS 2026<br/>
 		[AAAI 2026] Program committee (Reviewer), <a href="https://aaai.org/conference/aaai/aaai-26/">AAAI-26</a><br/>
 		[NeurIPS 2024] Reviewer, NeuIPS <a href="https://sslneurips2024.github.io/index.html">SSLTheoryPractice workshop</a><br/>
 		[2021-S ~ 2025-F] <i>인공지능 만들기</i>, <a href="https://www.kmooc.kr/">K-MOOC online lecture</a>, Teaching Assistant<br/>
@@ -218,121 +83,121 @@ li {
     <div class="content" id="pub">
         <h2>Publications</h2>
         <p style="color:#555555;font-size:14px">
-        I currently have a work in progress (WIP) that has been submitted to the <i>Neurocomputing</i> journal. A preliminary preprint version of this manuscript (formatted according to ICCV style) have been uploaded to <a href="https://arxiv.org/abs/2507.02929" target="_blank">arXiv</a>. The uploaded version will be updated in accordance with the journal's review process.
+        I have a paper <b>accepted</b> to the <i>Neurocomputing</i> journal (to appear).
         </p>
 		<div class="pubitemholder">
 			<div class="pubimageholder">
 				<a href="fig/duel-aaai.PNG" target="_blank">
-					<img src="fig/duel-aaai.PNG" style="height:100%;width:100%">
+					<img src="fig/duel-aaai.PNG" alt="DUEL paper thumbnail" loading="lazy">
 				</a>
 			</div>
 			<div class="pubtextholder">
-				<p id="pub">
+				<p class="pub">
 					<b>DUEL: Duplicate Elimination on Active Memory for Self-Supervised Class-Imbalanced Learning</b>
 				</p>
-				<p id="pub" style="color:#606060">
+				<p class="pub" style="color:#606060">
 					<i><b>Won-Seok Choi</b>, Hyundo Lee, Dong-Sig Han, Junseok Park, Heeyeon Koo, Byoung-Tak Zhang</i></br>
 					The 38th Annual AAAI Conference on Artificial Intelligence (AAAI 2024) </br>
 					[<a href="https://arxiv.org/abs/2402.08963">paper</a>]
 				</p>
 			</div>
 		</div>
-		<div class="pubitemholder" id="spacing">
+		<div class="pubitemholder">
 			<div class="pubimageholder">
 				<a href="fig/toddler-aaai.PNG" target="_blank">
-					<img src="fig/toddler-aaai.PNG" style="height:100%;width:100%">
+					<img src="fig/toddler-aaai.PNG" alt="Toddler-Inspired Reward paper thumbnail" loading="lazy">
 				</a>
 			</div>
 			<div class="pubtextholder">
-				<p id="pub">
+				<p class="pub">
 					<b>Unveiling the Significance of Toddler-Inspired Reward Transition in Goal-Oriented Reinforcement Learning</b> </br>
 				</p>
-				<p id="pub" style="color:#606060">
+				<p class="pub" style="color:#606060">
 					<i>Junseok Park, Yoonsung Kim, Hee bin Yoo, Min Whoo Lee, Kibeom Kim, <b>Won-Seok Choi</b>, Minsu Lee, Byoung-Tak Zhang</i></br>
 					The 38th Annual AAAI Conference on Artificial Intelligence (AAAI 2024) </br>
 					[<a href="https://ojs.aaai.org/index.php/AAAI/article/view/27815">paper</a>]
 				</p>
 			</div>
 		</div>
-		<div class="pubitemholder" id="spacing">
+		<div class="pubitemholder">
 			<div class="pubimageholder">
 				<a href="fig/sketching-cvpr.PNG" target="_blank">
-					<img src="fig/sketching-cvpr.PNG" style="height:100%;width:100%">
+					<img src="fig/sketching-cvpr.PNG" alt="Learning Geometry-aware Representations paper thumbnail" loading="lazy">
 				</a>
 			</div>
 			<div class="pubtextholder">
-				<p id="pub">
+				<p class="pub">
 					<b>Learning Geometry-aware Representations by Sketching</b> </br>
 				</p>
-				<p id="pub" style="color:#606060">
+				<p class="pub" style="color:#606060">
 					<i>Hyundo Lee, Inwoo Hwang, Hyunsung Go, <b>Won-Seok Choi</b>, Kibeom Kim, Byoung-Tak Zhang</i></br>
 					The IEEE/CVF Conference on Computer Vision and Pattern Recognition 2023 (CVPR 2023) </br>
 					[<a href="https://openaccess.thecvf.com/content/CVPR2023/html/Lee_Learning_Geometry-Aware_Representations_by_Sketching_CVPR_2023_paper.html">paper</a>]
 				</p>
 			</div>
 		</div>
-		<div class="pubitemholder" id="spacing">
+		<div class="pubitemholder">
 			<div class="pubimageholder">
 				<a href="fig/duel-workshop.PNG" target="_blank">
-					<img src="fig/duel-workshop.PNG" style="height:100%;width:100%">
+					<img src="fig/duel-workshop.PNG" alt="DUEL workshop paper thumbnail" loading="lazy">
 				</a>
 			</div>
 			<div class="pubtextholder">
-				<p id="pub">
+				<p class="pub">
 					<b>DUEL: Adaptive Duplicate Elimination on Working Memory for Self-Supervised Learning</b> </br>
 				</p>
-				<p id="pub" style="color:#606060">
+				<p class="pub" style="color:#606060">
 					<i><b>Won-Seok Choi</b>, Hyundo Lee, Dong-Sig Han, Junseok Park, Byoung-Tak Zhang</i></br>
 					NeurIPS 2022 SSLTheoryPractice Workshop </br>
 					[<a href="https://arxiv.org/abs/2210.17052">paper</a>] [<a href="https://sslneurips22.github.io/">workshop</a>]
 				</p>
 			</div>
 		</div>
-		<div class="pubitemholder" id="spacing">
+		<div class="pubitemholder">
 			<div class="pubimageholder">
 				<a href="fig/mpart-icml.PNG" target="_blank">
-					<img src="fig/mpart-icml.PNG" style="height:100%;width:100%">
+					<img src="fig/mpart-icml.PNG" alt="MP-ART paper thumbnail" loading="lazy">
 				</a>
 			</div>
 			<div class="pubtextholder">
-				<p id="pub">
+				<p class="pub">
 					<b>Message passing adaptive resonance theory for online active semi-supervised learning</b> </br>
 				</p>
-				<p id="pub" style="color:#606060">
+				<p class="pub" style="color:#606060">
 					<i>Taehyeong Kim, Injune Hwang, Hyundo Lee, Hyunseo Kim, <b>Won-Seok Choi</b>, Joseph J Lim, Byoung-Tak Zhang</i></br>
 					International Conference on Machine Learning 2021 (ICML 2021) </br>
 					[<a href="https://proceedings.mlr.press/v139/kim21e">paper</a>]
 				</p>
 			</div>
 		</div>
-		<div class="pubitemholder" id="spacing">
+		<div class="pubitemholder">
 			<div class="pubimageholder">
 				<a href="fig/arlet-workshop.PNG" target="_blank">
-					<img src="fig/arlet-workshop.PNG" style="height:100%;width:100%">
+					<img src="fig/arlet-workshop.PNG" alt="ARLET paper thumbnail" loading="lazy">
 				</a>
 			</div>
 			<div class="pubtextholder">
-				<p id="pub">
+				<p class="pub">
 					<b>ARLET: Adaptive Representation Learning with End-to-end Training</b> </br>
 				</p>
-				<p id="pub" style="color:#606060">
+				<p class="pub" style="color:#606060">
 					<i><b>Won-Seok Choi</b>, Injune Hwang, Byoung-Tak Zhang</i></br>
 					NeurIPS 2020 Workshop on BabyMind </br>
 					[<a href="https://bi.snu.ac.kr/NeurIPS2020_Babymind/26.pdf">paper</a>] [<a href="https://babymind-workshop-2020.github.io/">workshop</a>]
 				</p>
 			</div>
 		</div>
-		<div class="pubitemholder" id="spacing">
+		<div class="pubitemholder">
 			<div class="pubimageholder">
 				<a href="fig/lpart-icassp.PNG" target="_blank">
-					<img src="fig/lpart-icassp.PNG" style="height:100%;width:100%">
+					<img src="fig/lpart-icassp.PNG" alt="LP-ART paper thumbnail" loading="lazy">
 				</a>
 			</div>
 			<div class="pubtextholder">
-				<p id="pub">
+				<p class="pub">
 					<b>Label propagation adaptive resonance theory for semi-supervised continuous learning</b> </br>
 				</p>
-				<p id="pub" style="color:#606060">
+				<p class="pub" style="color:#606060">
 					<i>Taehyeong Kim, Injune Hwang, Gi-Cheon Kang, <b>Won-Seok Choi</b>, Hyunseo Kim, Byoung-Tak Zhang</i></br>
 					45th International Conference on Acoustics, Speech, and Signal Processing (ICASSP 2020) </br>
 					[<a href="https://ieeexplore.ieee.org/abstract/document/9054655">paper</a>]
@@ -343,7 +208,52 @@ li {
     <hr>
     <footer class="footer-bar">
 	Won-Seok Choi, <a href="https://bi.snu.ac.kr">BioIntelligence Lab, Seoul National University</a>.<br/>
-	Last update: 17, October, 2025
+	Last update: 12, July, 2026
     </footer>
+    <div id="img-modal" onclick="closeModal()">
+        <img id="modal-img" src="" alt="" onclick="event.stopPropagation()">
+    </div>
+    <script>
+        function openModal(src, alt) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('modal-img').alt = alt;
+            document.getElementById('img-modal').classList.add('active');
+        }
+        function closeModal() {
+            document.getElementById('img-modal').classList.remove('active');
+        }
+        document.querySelectorAll('.pubimageholder a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var img = this.querySelector('img');
+                openModal(this.href, img ? img.alt : '');
+            });
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        document.querySelectorAll('.pubitemholder').forEach(function(item) {
+            var holder = item.querySelector('.pubimageholder');
+            var img = holder ? holder.querySelector('img') : null;
+            if (!holder || !img) return;
+            item.addEventListener('mouseenter', function() {
+                if (!img.naturalWidth) return;
+                var renderedH = holder.offsetWidth * img.naturalHeight / img.naturalWidth;
+                if (renderedH <= 100) return;
+                holder._expanded = true;
+                holder.style.height = renderedH + 'px';
+                img.style.top = '0';
+                img.style.transform = 'none';
+            });
+            item.addEventListener('mouseleave', function() {
+                if (!holder._expanded) return;
+                holder._expanded = false;
+                holder.style.height = '100px';
+                img.style.top = '50%';
+                img.style.transform = 'translateY(-50%)';
+            });
+        });
+    </script>
 </body>
 </html>
